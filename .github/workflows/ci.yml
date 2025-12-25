@@ -36,3 +36,16 @@ jobs:
         with:
           name: dist
           path: dist
+  deno-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - name: Lint API with Deno (recommended rules)
+        run: deno lint --config=deno.json api/
