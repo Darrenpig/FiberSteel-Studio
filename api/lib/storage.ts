@@ -26,9 +26,9 @@ export function readJSON<T>(name: string, fallback: T): T {
   }
 }
 
-export function writeJSON(name: string, data: any) {
+export function writeJSON<T>(name: string, data: T) {
   const file = path.join(dataDir, name)
-  fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8')
+  fs.writeFileSync(file, JSON.stringify(data as unknown, null, 2), 'utf-8')
 }
 
 export function writeExportFile(filename: string, content: string) {

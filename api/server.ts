@@ -2,6 +2,7 @@
  * local server entry file, for local development
  */
 import app from './app.js';
+import process from 'node:process';
 
 /**
  * start server with port
