@@ -11,10 +11,18 @@ type BomItem = {
   remark?: string
 }
 
+type ExportHistory = {
+  id: string
+  type: 'excel' | 'pdf'
+  filename: string
+  createdAt: string
+  count: number
+}
+
 const router = Router()
 
 router.get('/history', (req: Request, res: Response) => {
-  const history = readJSON<{ id: string; type: 'excel' | 'pdf'; filename: string; createdAt: string; count: number; }[]>('export-history.json', [])
+  const history = readJSON<ExportHistory[]>('export-history.json', [])
   res.json({ success: true, history })
 })
 
@@ -61,7 +69,7 @@ router.post('/export/excel', (req: Request, res: Response) => {
     const filename = `bom_${Date.now()}_${b + 1}.xls`
     writeExportFile(filename, html)
     result.push({ url: getExportPublicPath(filename), filename })
-    const history = readJSON<any[]>('export-history.json', [])
+    const history = readJSON<ExportHistory[]>('export-history.json', [])
     history.push({ id: crypto.randomUUID(), type: 'excel', filename, createdAt: new Date().toISOString(), count: batches[b].length })
     writeJSON('export-history.json', history)
   }
@@ -81,7 +89,7 @@ router.post('/export/pdf', (req: Request, res: Response) => {
     const filename = `bom_${Date.now()}_${b + 1}.html`
     writeExportFile(filename, html)
     result.push({ url: getExportPublicPath(filename), filename })
-    const history = readJSON<any[]>('export-history.json', [])
+    const history = readJSON<ExportHistory[]>('export-history.json', [])
     history.push({ id: crypto.randomUUID(), type: 'pdf', filename, createdAt: new Date().toISOString(), count: batches[b].length })
     writeJSON('export-history.json', history)
   }

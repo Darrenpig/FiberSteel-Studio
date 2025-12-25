@@ -1,6 +1,8 @@
 import assert from 'assert'
 
-async function post(url: string, body: any) {
+type PositionPayload = { group: string; instanceIndex: number; x: number; y: number; z: number }
+
+async function post<T>(url: string, body: T) {
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

@@ -6,7 +6,7 @@ type LogEntry = {
   id: string
   type: string
   message: string
-  data?: any
+  data?: unknown
   createdAt: string
 }
 

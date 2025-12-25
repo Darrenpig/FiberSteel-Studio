@@ -1,6 +1,9 @@
 import assert from 'assert'
 
-async function post(url: string, body: any) {
+type BomItem = { partNo: string; name: string; spec: string; qty: number; unit: string; remark?: string }
+type ExportPayload = { items: BomItem[]; pageSize: number }
+
+async function post<T>(url: string, body: T) {
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
