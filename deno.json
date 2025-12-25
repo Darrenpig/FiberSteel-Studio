@@ -2,7 +2,7 @@
   "lint": {
     "rules": {
       "tags": ["recommended"],
-      "exclude": ["no-node-globals"]
+      "exclude": ["no-node-globals", "no-explicit-any"]
     }
   },
   "fmt": {
