@@ -13,7 +13,7 @@ type PositionRecord = {
 
 const router = Router()
 
-router.get('/', (req: Request, res: Response) => {
+router.get('/', (_req: Request, res: Response) => {
   const positions = readJSON<PositionRecord[]>('positions.json', [])
   res.json({ success: true, positions })
 })

@@ -12,7 +12,7 @@ type LogEntry = {
 
 const router = Router()
 
-router.get('/', (req: Request, res: Response) => {
+router.get('/', (_req: Request, res: Response) => {
   const logs = readJSON<LogEntry[]>('op-logs.json', [])
   res.json({ success: true, logs })
 })

@@ -1,8 +1,9 @@
 import { Router, type Request, type Response } from 'express'
+import crypto from 'crypto'
 
 const router = Router()
 
-router.post('/square-tube', async (req: Request, res: Response): Promise<void> => {
+router.post('/square-tube', (req: Request, res: Response): void => {
   const {
     width = 20,
     height = 20,
@@ -41,7 +42,7 @@ router.post('/square-tube', async (req: Request, res: Response): Promise<void> =
   })
 })
 
-router.post('/fiber-board', async (req: Request, res: Response): Promise<void> => {
+router.post('/fiber-board', (req: Request, res: Response): void => {
   const {
     width = 1000,
     height = 1000,

@@ -12024,5 +12024,53 @@
       "z": 0
     },
     "createdAt": "2025-12-25T01:03:42.670Z"
+  },
+  {
+    "id": "fe52342f-a9cb-45fe-ae32-70cab4203162",
+    "type": "move",
+    "message": "Moved tube",
+    "data": {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "createdAt": "2025-12-25T01:03:47.515Z"
+  },
+  {
+    "id": "a16da430-2f00-4e95-a1ed-62e06d879477",
+    "type": "move",
+    "message": "Moved tube",
+    "data": {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "createdAt": "2025-12-25T01:03:56.660Z"
+  },
+  {
+    "id": "f8c5b63f-2fc9-4ba6-999e-db2313c2c414",
+    "type": "move",
+    "message": "Moved tube",
+    "data": {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "createdAt": "2025-12-25T01:04:02.416Z"
+  },
+  {
+    "id": "59c15d2a-65f0-4436-ae9c-24ea679f0b07",
+    "type": "move",
+    "message": "Moved tube",
+    "data": {
+      "index": 0,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "createdAt": "2025-12-25T01:04:04.515Z"
   }
 ]

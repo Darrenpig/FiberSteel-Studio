@@ -21,12 +21,12 @@ type ExportHistory = {
 
 const router = Router()
 
-router.get('/history', (req: Request, res: Response) => {
+router.get('/history', (_req: Request, res: Response) => {
   const history = readJSON<ExportHistory[]>('export-history.json', [])
   res.json({ success: true, history })
 })
 
-router.get('/exports', (req: Request, res: Response) => {
+router.get('/exports', (_req: Request, res: Response) => {
   const files = listExports()
   res.json({ success: true, files })
 })
@@ -41,7 +41,7 @@ router.get('/file/:name', (req: Request, res: Response) => {
       res.setHeader('Content-Type', 'text/html; charset=utf-8')
     }
     res.send(buf)
-  } catch (e) {
+  } catch (_e) {
     res.status(404).json({ success: false, error: 'Not Found' })
   }
 })
