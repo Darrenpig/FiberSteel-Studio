@@ -1728,7 +1728,7 @@ export default function Designer() {
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [plateSelected, activeTool, insertMode, cutMode, selectedIndices, deletedMap, selectAllVisible, invertSelection])
+  }, [plateSelected, activeTool, insertMode, cutMode, selectedIndices, deletedMap])
   useEffect(() => {
     const scene = sceneRef.current
     const group = tubesGroupRef.current
